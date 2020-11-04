@@ -1,17 +1,23 @@
 ---
+# includes:
+#   - ./examples/goals/
+
 goals:
   build:
     description: Build application
-    functions: []
-
-  test:
-    description: Test application
     functions:
-      - name: WaitUntilServiceIsUp
+      - name: ShellCmd
         args:
-          url: "https://instagram.com/"
-          desiredStatusCode: 200
+          cmd: "go build ."
 
-  deploy:
-    description: Deploy application
-    functions: []
+  # test:
+  #   description: Test application
+  #   functions:
+  #     - name: WaitUntilServiceIsUp
+  #       args:
+  #         url: "https://instagram.com/"
+  #         desiredStatusCode: 200
+
+  # deploy:
+  #   description: Deploy application
+  #   functions: []
